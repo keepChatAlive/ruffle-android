@@ -20,7 +20,7 @@
         android:id="@+id/keyboard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="110dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -343,23 +343,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button_ctrl"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tag="17"
-                android:text="CTRL" />
-
-            <Button
-                android:id="@+id/button_alt"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tag="18"
-                android:text="ALT" />
-
             <Button
                 android:id="@+id/button_space"
                 android:layout_width="150dp"
@@ -374,7 +357,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:tag="37"
-                android:text="(" />
+                android:text=" ← " />
 
             <Button
                 android:id="@+id/button_up"
@@ -382,7 +365,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:tag="38"
-                android:text="^" />
+                android:text=" ↑ " />
 
             <Button
                 android:id="@+id/button_down"
@@ -390,7 +373,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:tag="40"
-                android:text="v" />
+                android:text=" ↓ " />
 
             <Button
                 android:id="@+id/button_right"
@@ -398,20 +381,54 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:tag="39"
-                android:text=")" />
+                android:text=" → " />
 
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/button_escape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:tag="27"
+                android:text="ESC" />
+            <Button
+                android:id="@+id/button_shift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:tag="16"
+                android:text="SHIFT" />
+            <Button
+                android:id="@+id/button_ctrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:tag="17"
+                android:text="CTRL" />
+            <Button
+                android:id="@+id/button_alt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:tag="18"
+                android:text="ALT" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/toolbar"
         android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="50dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
         <Button
             android:id="@+id/button_kb"
             android:layout_width="wrap_content"
