@@ -1,23 +1,23 @@
 [versions]
-agp = "8.4.0"
-kotlin = "1.9.24"
+agp = "8.5.1"
+kotlin = "2.0.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
-lifecycleRuntimeKtx = "2.7.0"
-activityCompose = "1.9.0"
-composeBom = "2024.05.00"
-lifecycleViewmodelCompose = "2.7.0"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+lifecycleRuntimeKtx = "2.8.4"
+activityCompose = "1.9.1"
+composeBom = "2024.06.00"
+lifecycleViewmodelCompose = "2.8.4"
 navigationRuntimeKtx = "2.7.7"
 navigationCompose = "2.7.7"
 gamesActivity = "2.0.2" # Needs to be in sync with android-activity crate
 constraintlayout = "2.1.4"
-appcompat = "1.6.1"
+appcompat = "1.7.0"
 ktlint = "12.1.1"
 uiautomator = "2.3.0"
-androidXTestRunner = "1.5.2"
-androidXTestRules = "1.5.0"
+androidXTestRunner = "1.6.1"
+androidXTestRules = "1.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -47,6 +47,7 @@ androidx-test-rules = { group = "androidx.test", name = "rules", version.ref = "
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 cargoNdkAndroid = { id = "com.github.willir.rust.cargo-ndk-android", version = "0.3.4" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 

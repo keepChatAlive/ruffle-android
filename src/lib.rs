@@ -111,6 +111,10 @@ async fn run(app: AndroidApp) {
                 match event {
                     PollEvent::Main(event) => match event {
                         MainEvent::Destroy => {
+                            if let Some(player) = playerbox.as_ref() {
+                                let mut player_lock = player.player.lock().unwrap();
+                                player_lock.flush_shared_objects();
+                            }
                             quit = true;
                         }
                         MainEvent::WindowResized { .. } => {
@@ -215,12 +219,14 @@ async fn run(app: AndroidApp) {
                                 };
                                 let movie_url = Url::parse("file://movie.swf").unwrap();
 
-                                let (executor, channel) = AsyncExecutor::new(
+                                let (executor, future_spawner) = AsyncExecutor::new(
                                     sender.clone(),
                                 );
                                 let navigator = ExternalNavigatorBackend::new(
                                     movie_url.clone(),
-                                    channel,
+                                    None,
+                                    None,
+                                    future_spawner,
                                     None,
                                     true,
                                     ruffle_core::backend::navigator::OpenURLMode::Allow,
@@ -292,7 +298,13 @@ async fn run(app: AndroidApp) {
                                         )
                                         .unwrap();
                                 }
+                                player_lock.set_is_playing(true);
                             }
+                        }
+                        MainEvent::TerminateWindow { .. }  => {
+                            let player = &playerbox.as_ref().unwrap().player;
+                            let mut player_lock = player.lock().unwrap();
+                            player_lock.set_is_playing(false);
                         }
                         MainEvent::InputAvailable => {
                             if let Ok(mut inputs) = app.input_events_iter() {
@@ -313,6 +325,7 @@ async fn run(app: AndroidApp) {
                                                     x,
                                                     y,
                                                     button: MouseButton::Left, // TODO
+                                                    index: None, // TODO
                                                 }
                                             }
                                             MotionAction::Up | MotionAction::PointerUp => {

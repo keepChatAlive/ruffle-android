@@ -16,14 +16,14 @@ strip = "symbols"
 [dependencies]
 
 android-activity = { version = "0.6.0", features = ["game-activity"] }
-android_logger = "0.13.3"
+android_logger = "0.14.1"
 
 jni = "0.21.1"
 ndk = { version = "0.9.0", features = ["audio"] }
 ndk-context = "0.1.1"
 
-# Have to follow Ruffle with these.
-wgpu = "0.20.0"
+# Have to follow Ruffle with this.
+wgpu = "0.20.1"
 
 ruffle_core = { git = "https://github.com/keepChatAlive/ruffle", branch = "master", features = [
     "audio",
@@ -39,15 +39,15 @@ ruffle_render_wgpu = { git = "https://github.com/keepChatAlive/ruffle", branch =
 ruffle_video_software = { git = "https://github.com/keepChatAlive/ruffle", branch = "master" }
 ruffle_frontend_utils = { git = "https://github.com/keepChatAlive/ruffle", branch = "master" }
 
-log = "0.4.21"
+log = "0.4.22"
 log-panics = { version = "2.1.0", features = ["with-backtrace"]}
 
 # Redirect tracing to log
 tracing = {version = "0.1.40", features = ["log", "log-always"]}
 
-url = "2.5.0"
+url = "2.5.2"
 
-tokio = { version = "1.37.0", features = ["rt-multi-thread", "macros"]}
+tokio = { version = "1.39.2", features = ["rt-multi-thread", "macros"]}
 
 [features]
 jpegxr = ["ruffle_core/jpegxr"]
