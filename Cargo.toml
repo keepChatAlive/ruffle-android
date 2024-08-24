@@ -23,7 +23,7 @@ ndk = { version = "0.9.0", features = ["audio"] }
 ndk-context = "0.1.1"
 
 # Have to follow Ruffle with this.
-wgpu = "0.20.1"
+wgpu = "22.1.0"
 
 ruffle_core = { git = "https://github.com/keepChatAlive/ruffle", branch = "master", features = [
     "audio",
@@ -47,7 +47,7 @@ tracing = {version = "0.1.40", features = ["log", "log-always"]}
 
 url = "2.5.2"
 
-tokio = { version = "1.39.2", features = ["rt-multi-thread", "macros"]}
+tokio = { version = "1.39.3", features = ["rt-multi-thread", "macros"]}
 
 [features]
 jpegxr = ["ruffle_core/jpegxr"]
