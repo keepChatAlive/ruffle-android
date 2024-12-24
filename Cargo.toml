@@ -23,7 +23,7 @@ ndk = { version = "0.9.0", features = ["audio"] }
 ndk-context = "0.1.1"
 
 # Have to follow Ruffle with this.
-wgpu = "22.1.0"
+wgpu = "23.0.1"
 
 ruffle_core = { git = "https://github.com/keepChatAlive/ruffle", branch = "master", features = [
     "audio",
@@ -42,11 +42,11 @@ ruffle_frontend_utils = { git = "https://github.com/keepChatAlive/ruffle", branc
 log = "0.4.22"
 
 # Redirect tracing to log
-tracing = {version = "0.1.40", features = ["log", "log-always"]}
+tracing = {version = "0.1.41", features = ["log", "log-always"]}
 backtrace = "0.3.74"
 
 url = "2.5.2"
-webbrowser = "1.0.2"
+webbrowser = "1.0.3"
 
 tokio = { version = "1.40.0", features = ["rt-multi-thread", "macros"]}
 
