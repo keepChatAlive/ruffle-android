@@ -29,7 +29,7 @@ ndk-context = "0.1.1"
 # Have to follow Ruffle with this.
 wgpu = "25.0.2"
 
-ruffle_core = { git = "https://github.com/ruffle-rs/ruffle.git", branch = "master", features = [
+ruffle_core = { git = "https://github.com/keepChatAlive/ruffle.git", branch = "master", features = [
     "audio",
     "symphonia",
     "mp3",
